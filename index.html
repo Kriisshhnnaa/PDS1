@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function () {
+
+//Better to construct options first and then pass it as a parameter
+var options = {
+	animationEnabled: true,  	
+	title:{
+		text: "India: Age distribution from 2012 to 2022"
+	},
+	axisY: {
+		suffix: "%"
+	},
+	toolTip: {
+		shared: true,
+		reversed: true
+	},
+	legend: {
+		reversed: true,
+		verticalAlign: "center",
+		horizontalAlign: "right"
+	},
+	data: [
+	{
+		type: "stackedColumn100",
+		name: "0-14",
+		showInLegend: true,
+		yValueFormatString: "#,##0\"Lac\"",
+		dataPoints: [
+		{ label: "2012", y: 550 },
+		{ label: "2013", y: 580 },
+		{ label: "2014", y: 650 },
+		{ label: "2015", y: 690 }
+		]
+	},
+	{
+		type: "stackedColumn100",
+		name: "15-64",
+		showInLegend: true,
+		yValueFormatString: "#,##0\"Lac\"",
+		dataPoints: [
+		{ label: "2012", y: 1500 },
+		{ label: "2013", y: 1600 },
+		{ label: "2014", y: 1750 },
+		{ label: "2015", y: 1850 }
+		]
+	},
+	{
+		type: "stackedColumn100",
+		name: "65+",
+		showInLegend: true,
+		yValueFormatString: "#,##0\" Lac\"",
+		dataPoints: [
+		{ label: "2012", y: 550 },
+		{ label: "2013", y: 670 },
+		{ label: "2014", y: 680 },
+		{ label: "2015", y: 750 }
+		]
+	}
+	]
+};
+
+$("#chartContainer").CanvasJSChart(options);
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
+</body>
+</html>
